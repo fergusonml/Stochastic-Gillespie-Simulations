@@ -1,4 +1,4 @@
-model = """# Stochastic Simulation Algorithm input format
+# Stochastic Simulation Algorithm input format
 
 R1:
     $pool > TF
@@ -44,4 +44,3 @@ TF = 2
 TFactive = 10
 mRNA = 10
 Protein = 220
-"""
