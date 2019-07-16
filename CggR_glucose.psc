@@ -2,45 +2,32 @@
 
 R1:
     $pool > TF
-    kTFsyn
+    k1on
 R2:
     TF > $pool
-    kTFdeg*TF
+    k1off*TF
 R3:
-    TFactive > $pool
-    kTFdeg*TFactive
+    TF > mRNA + TF
+    k2on*TF
 R4:
-    TF > TFactive
-    kActivate*TF
-R5:
-    TFactive > TF
-    kInactivate*TFactive
-R6:
-    TFactive > mRNA + TFactive
-    kmRNAsyn*(TFactive/(TFactive+kX))
-R7:
     mRNA > $pool
-    kmRNAdeg*mRNA
-R8:
+    k2off*mRNA
+R5:
     mRNA > Protein + mRNA
-    kProteinsyn*mRNA
-R9:
+    k3on*mRNA
+R6:
     Protein > $pool
-    kProteindeg*Protein
+    k3off*Protein
 
 # InitPar
-kTFsyn = 200
-kTFdeg = 20
-kActivate = 2000
-kInactivate = 200
-kX = 5
-kmRNAsyn = 240
-kmRNAdeg = 20
-kProteinsyn = 400
-kProteindeg = 2
+k1on = 10
+k1off = 0.01
+k2on = 10
+k2off = 1
+k3on = 10
+k3off = 1
 
 # InitVar
-TF = 2
-TFactive = 10
-mRNA = 10
-Protein = 220
+TF = 0
+mRNA = 0
+Protein = 0
